@@ -1,0 +1,55 @@
+.topicos__titulos {
+    color: var(--branco);
+    font-size: 16px;
+    font-family: var(--font-principal);
+    text-transform: uppercase;
+    padding: 1em 0 0.5em 0;
+}
+
+.topicos {
+    background: var(--azul--degrade);
+    text-align: center;
+}
+
+.topicos__lista {
+    display: flex;
+    flex-wrap: wrap; /* colocado para os itens se encaixar em uma linha pois esta classe e a classe da lista completa */
+    justify-content: center;
+}
+
+.topicos_item{
+    margin: 2em 0.3em; /* aqui define a distancia de cada item de dentro da lista */
+}
+
+.topicos__link {
+    background-color: var(--laranja);
+    padding: 1em;
+    font-size: 16px;
+    font-family: var(--font-principal);
+    color: var(--branco);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.topicos__link:hover{
+    background-color: var(--cor--hover);
+    filter:brightness(50%); 
+}
+
+
+@media screen and (min-width: 1024px) {
+
+    .topicos__titulos {
+    font-size: 24px;
+    }
+
+    .topicos__link {
+        font-size: 24px;
+    }
+}
+
+@media screen and (min-width: 1728px) {
+    .topicos {
+        padding: 3em 30vw; /* aqui damos a quebra nos topicos visitados */
+    }
+}

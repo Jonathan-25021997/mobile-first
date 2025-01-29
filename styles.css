@@ -1,0 +1,34 @@
+@import url(/styles/cabecalho.css); /* importa a pasta solicitada */
+@import url(/styles/banner.css);
+@import url(/styles/carrossel.css);
+@import url(/styles/topicos.css);
+@import url(/styles/contato.css);
+@import url(/styles/rodape.css);
+
+:root {   /* VAR : cores ja pre selecionadas para facilidar a marcacao, aqui podemos definir cores, letras, estilos e etc. */
+    --cor--de--fundo: #EBECEE; /* cinza */
+    --branco: #FFFFFF;
+    --laranja: #EB9B00;
+    --azul--escuro: #002F52;
+    --preto: #000000;
+    --cor--hover: #ffd175;
+    --cinza: #474646;
+    --cinza--claro: #858585;
+    --preto: #000000;
+    --azul--degrade: linear-gradient(97.54deg, #002F52 35.49%, #326589 165.37%);
+    --font-principal: "poppins";
+    --font-secundario: "Josefin Sans";
+    --azul--claro: #083d66;
+    
+
+}
+
+
+
+body {
+    background-color: var(--cor--de--fundo);
+    font-family: var(--font-principal); /* aqui colocamos no body que a font sera para toda pagina a nossa root criada */
+    font-size: 16px; /* geralmente esse e o tamanho padrao */
+    font-weight: 400; /* esse e o peso padrao */ /* caso necessario mudar no proprio elemento a fonte de forma manual */
+}
+

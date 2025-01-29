@@ -1,0 +1,155 @@
+.cabecalho__menu-hamburger { 
+    width: 24px; /* altura */
+    height: 24px; /* largura */
+    background-image: url(../Assets/imagens/Menu.svg); /* imagem */
+    display: inline-block; /* usado para definir altura, largura e espacamento do elemento  */
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    
+}
+
+.container__botao:checked ~ .container__rotulo > .cabecalho__menu-hamburger { /* combinadores CSS */ /* o sinal de ~ e usado para achar uma classe e o sinal de > e para pegar a classe, o checked e para confirmar o input */
+    background-image: url(/Assets/imagens/Menu\ Aberto.svg);
+}
+
+.container__botao:checked ~ .container__rotulo { /* combinadores CSS */
+    background: var(--azul--degrade);
+} 
+
+.cabecalho {
+    background-color: var(--branco);
+    display: flex; /* permite que os itens se organizem automaticamente */
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.container {
+    display: flex; 
+    align-items: center;
+}
+
+.container__imagem{
+    padding: 1em;
+    
+}
+
+.lista-menu{
+    display: none;
+    position: absolute; /* permite que movimente o elemento de acordo com os elementos que vieram antes */
+    top: 100%;
+    width: 60vw;
+}
+
+.container__botao:checked ~ .lista-menu {
+    display: block;
+}
+
+.lista-menu__titulo, .lista-menu__item {
+    padding: 1em;
+    background-color: var(--branco);
+    color: var(--azul--claro);
+    
+}
+
+.lista-menu__titulo {
+    color: var(--laranja);
+    font-weight: 700;
+}
+
+.container__botao {
+    display: none;
+}
+
+.container__titulo, .opcoes {
+    display: none;   /* foi usado para o titulo Alura Books nao aparecer em telas menores do que 1024px */
+}
+
+.container__texto {
+    display: none;
+}
+
+
+@media screen and (min-width: 1024px) { /* media query que aplica estilo a determinado tamanho de tela, nesse caso tablet */
+    
+
+    .container__imagem-transparente, .cabecalho__menu-hamburger, .opcoes__botao, .container__texto { /* coisas que eu nao quero que apareca no formato 1024px joga aqui */
+        display: none;
+    }
+    
+    .container__titulo, .container__titulo--negrito {
+        font-family: var(--font-secundario);
+        font-size: 30px;
+
+    }
+
+    .container__titulo {
+        font-weight: 400;
+        display: block; /* foi usado para o titulo Alura Books aparecer em telas maiores que 1024px */
+    }
+
+    .container__titulo--negrito {
+        font-weight: 700;
+    }
+
+    .opcoes {
+        display: flex;
+    }
+
+    .opcoes__item {
+        padding: 0 1em;
+        text-transform: uppercase;
+        
+    }
+
+    .opcoes__link {
+        text-decoration: none;
+        color: var(--preto);
+    }
+
+    .opcoes__botao:checked ~ .lista-menu { /* se a classe opcoes__botao for checado ele vai abrir a lista menu */
+        display: block;
+        width: auto;
+    }
+
+    .opcoes__botao:checked ~ .opcoes__rotulo > .opcoes__item { /* confere o checked procura o rotulo e dentro ele encontra nosso menu hamburger */
+        background: var(--azul--degrade);
+        color: var(--branco);
+    }
+    
+    .opcoes__item {
+        padding: 1.6em 2em;
+    }
+
+    .lista-menu__item:hover {
+        background: var(--azul--degrade);
+        color: var(--branco);
+    }
+
+   
+    
+
+}
+
+@media screen and (min-width: 1728px) {
+    
+    .container__texto {
+        display: block;
+    }
+
+    .container__link {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: var(--preto);
+    }
+
+    .cabecalho {
+        padding: 0 2em;
+    }
+
+    .opcoes {
+        margin-right:auto;
+    }
+}
